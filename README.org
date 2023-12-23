@@ -1,0 +1,29 @@
+#+title: One Bit CPU
+#+author: 凉凉
+* About
+在网上冲浪的时候刷到一篇 [[https://zhuanlan.zhihu.com/p/673610061][知乎专栏]], 觉得很好玩,
+但是手上又没有芯片, 只有一块不算贵也不算便宜的 FPGA (TangNano 9K).
+于是选择复刻了这个 1 位计算机.
+
+While I was surfing on the Internet, I found a [[https://zhuanlan.zhihu.com/p/673610061][Zhihu Zhuanlan (Chinese)]],
+which I though was interesting. However, since I don't have chip by
+my side, only a normal FPGA board (TangNano 9K). I thought maybe I
+could rebuilt this one bit computer.
+
+注: 你需要的环境和开发板如下:
+
+Note: what you need is
++ [[https://github.com/YosysHQ/apicula][apicula]] (=pip install apicula=)
++ [[https://github.com/YosysHQ/yosys][yosys]], [[https://cmake.org/][cmake]], [[https://eigen.tuxfamily.org/index.php][eigen]], [[https://github.com/trabucayre/openFPGALoader][openFPGALoader]] (=brew install yosys cmake eigen openfpgaloader=)
++ [[https://github.com/YosysHQ/nextpnr][nextpnr]] (See Github for how to build it from source)
++ [[https://en.wiki.sipeed.com/hardware/en/tang/Tang-Nano-9K/Nano-9K.html][TangNano 9K]]
++ 更多请参考: [[https://learn.lushaylabs.com/os-toolchain-manual-installation/][OS Toolchain Manual Installation]] (more information)
++ 或者 [[https://li-yiyang.github.io/misc/turing-complete-verilog/][Turing Complete and Verilog (Chinese)]] (这是我入门数电的游戏,
+  it's the game that brought me into digital circuits)
+
+注: 但是现在有点忙, 所以没空写更加细致的文档, 并且还没有做各个单元的测试,
+可能还是有 bug. 我将会在之后进行更新 (可能吧).
+
+Note: I was kinda buzy, that's why I may have no time to write a good
+documenation, so does the unit test for which there may be bug hidding
+somewhere. May update someday (hopefully).
