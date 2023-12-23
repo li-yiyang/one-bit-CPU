@@ -10,6 +10,11 @@ which I though was interesting. However, since I don't have chip by
 my side, only a normal FPGA board (TangNano 9K). I thought maybe I
 could rebuilt this one bit computer.
 
+最原始的仓库 (1bit CPU) 在 [[https://github.com/naoto64/1bit-CPU][naoto64/1bit-CPU]], 这个仓库是其的 FPGA 的简单实现.
+
+The original repo (1bit CPU) is at [[https://github.com/naoto64/1bit-CPU][naoto64/1bit-CPU]], this repo is its FPGA
+implementation.
+
 注: 你需要的环境和开发板如下:
 
 Note: what you need is
