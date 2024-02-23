@@ -12,4 +12,4 @@ module alu (
                     code[1] & code[0] : // jmp
                     ~pc_in;             // pc++
    
-endmodule : alu
+endmodule // alu

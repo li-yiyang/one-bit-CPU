@@ -27,5 +27,5 @@ module cpu (
    assign clk_led = clk;
    assign reg_led = a;
    assign pc_led  = p;
-
-endmodule : cpu
+   
+endmodule // cpu

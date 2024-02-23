@@ -17,4 +17,4 @@ module slower_clk (
      end else
        counter <= counter + 1;   
 
-endmodule : slower_clk
+endmodule // slower_clk

@@ -11,5 +11,7 @@ module register (
        data_reg <= 1'b0;        // reset data_reg
      else if (set_p == 1'b1)
        data_reg <= data;        // set data_reg
+     else
+       data_reg <= data_reg;    // stay unchanged
    
-endmodule : register
+endmodule // register

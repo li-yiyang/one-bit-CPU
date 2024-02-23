@@ -5,6 +5,9 @@ DEVICE=GW1NR-LV9QN88PC6/I5
 TOP=cpu
 TOP_PNR=${TOP}_pnr
 
+SIM=cpu_test
+SRC=$(filter-out ${SIM}.v,$(wildcard *.v))
+
 all: ${TOP}.fs
 
 # Generate Bit Stream
@@ -17,12 +20,19 @@ ${TOP_PNR}.json: ${TOP}.json
 								--device ${DEVICE} --family ${FAMILY} --cst ${BOARD}.cst
 
 # Synthesize
-${TOP}.json: *.v
-	yosys -p "$(foreach f, $(wildcard *.v), read_verilog $(f);) \
+${TOP}.json: ${SRC}
+	yosys -p "$(foreach f, ${SRC}, read_verilog $(f);) \
 						synth_gowin -top ${TOP} -json ${TOP}.json"
 
+# Simulation
+${SIM}.o: ${SIM}.v ${SRC}
+	iverilog -o ${SIM}.o -s ${SIM} *.v
 
-.PHONY: load clean
+simulation: ${SIM}.o
+	vvp ${SIM}.o
+	gtkwave ${SIM}.vcd
+
+.PHONY: load clean simulation
 
 # Program Device
 load: ${TOP}.fs
@@ -33,3 +43,5 @@ clean:
 	rm ${TOP}.json
 	rm ${TOP_PNR}.json
 	rm ${TOP}.fs
+	rm ${SIM}.o
+	rm ${SIM}.vcd
