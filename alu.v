@@ -4,11 +4,11 @@ module alu (
              output reg_out, pc_out
             );
 
-   assign reg_out = code[1] == 1'b1 ?
+   assign reg_out = code[1] == 1'b0 ?  // cmd == 0 => XOR
                     reg_in ^ code[0] : // xor
                     reg_in;            // reg
 
-   assign pc_out  = code[1] == 1'b1 ?
+   assign pc_out  = code[1] == 1'b1 ?   // cmd == 1 => JMP
                     code[1] & code[0] : // jmp
                     ~pc_in;             // pc++
    
